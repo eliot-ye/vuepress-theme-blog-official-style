@@ -1,6 +1,6 @@
 # vuepress-theme-officialStyleBlog
 
-这是一个基于官方文档主题风格的blog主题
+这是一个基于 vuepress 官方文档主题风格的blog主题
 
 ## 配置
 
