@@ -29,6 +29,7 @@ export default {
     }
   },
   mounted() {
+    if(!this.headers)return;
     sidebarEl = this.$refs.sidebar;
     sidebarObj.clientHeight = sidebarEl.clientHeight;
     sidebarObj.scrollHeight = sidebarEl.scrollHeight;
