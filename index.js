@@ -6,7 +6,13 @@ module.exports = (themeConfig, ctx) => {
   } = themeConfig;
 
   /** 默认的分页配置 */
-  const pagination = { perPagePosts: 100 };
+  const pagination = {
+    // sorter(prev, next) {
+    //   const prevTime = new Date(prev.frontmatter.date).getTime()
+    //   const nextTime = new Date(next.frontmatter.date).getTime()
+    //   return prevTime - nextTime > 0 ? 1 : -1
+    // }
+  };
 
   /** 纳入目录导航栏的目录 */
   const directoriesList = directories.map(item => {
@@ -62,7 +68,7 @@ module.exports = (themeConfig, ctx) => {
     '@vuepress/last-updated',
     '@vuepress/back-to-top',
     '@vuepress/nprogress',
-    ['@vuepress/search',{searchMaxSuggestions: 10}]
+    ['@vuepress/search', { searchMaxSuggestions: 10 }]
   ];
 
   return { plugins };
