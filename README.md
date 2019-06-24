@@ -2,6 +2,14 @@
 
 这是一个基于 vuepress 官方文档主题风格的 blog 主题，暂不考虑多语言
 
+## 下载
+
+```bash
+npm i git://git@github.com/eliot-ye/vuepress-theme-blog-official-style.git -S
+# or
+npm i https://github.com/eliot-ye/vuepress-theme-blog-official-style.git -S
+```
+
 ## 配置
 
 ```js
