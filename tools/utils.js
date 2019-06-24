@@ -14,15 +14,14 @@
  * doSomeThing()
  */
 export class AntiShake {
-  /**
-   * @private
-   * @type {NodeJS.Timeout}
-   */
-  theTimeOut = null;
-
   constructor(time = 500) {
     /** @private */
     this.time = time;
+    /**
+   * @private
+   * @type {NodeJS.Timeout}
+   */
+    this.theTimeOut = null;
   }
 
   /**
