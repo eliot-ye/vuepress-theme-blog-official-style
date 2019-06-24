@@ -3,7 +3,7 @@
     <About/>
     <TagList />
     <CatalogueList/>
-    <!-- <PaginationButton/> -->
+    <PaginationButton/>
   </div>
 </template>
 
@@ -11,14 +11,14 @@
 import About from "../components/About.vue";
 import TagList from "../components/TagList.vue"
 import CatalogueList from "../components/CatalogueList";
-// import PaginationButton from "../components/PaginationButton";
+import PaginationButton from "../components/PaginationButton";
 export default {
   name: "FrontmatterPagination",
   components: {
     About,
     TagList,
     CatalogueList,
-    // PaginationButton
+    PaginationButton
   }
 };
 </script>

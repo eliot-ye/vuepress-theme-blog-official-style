@@ -2,20 +2,20 @@
   <div id="Layout">
     <About/>
     <CatalogueList/>
-    <!-- <PaginationButton/> -->
+    <PaginationButton/>
   </div>
 </template>
 
 <script>
 import About from "../components/About.vue";
 import CatalogueList from "../components/CatalogueList";
-// import PaginationButton from "../components/PaginationButton";
+import PaginationButton from "../components/PaginationButton";
 export default {
   name: "Layout",
   components: {
     About,
-    CatalogueList
-    // PaginationButton
+    CatalogueList,
+    PaginationButton
   }
 };
 </script>
