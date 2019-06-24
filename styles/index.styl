@@ -66,9 +66,9 @@ strong
 h1, h2, h3, h4, h5, h6
   font-weight 600
   line-height 1.25
-  {$contentClass}:not(.custom) > &
-    margin-top 0.5rem - $navbarHeight
-    padding-top ($navbarHeight + 1rem)
+  {$contentClass}:not(.custom)  &
+    margin-top -($navbarHeight - 1)
+    padding-top $navbarHeight
     margin-bottom 0
     &:first-child
       margin-top -1.5rem
