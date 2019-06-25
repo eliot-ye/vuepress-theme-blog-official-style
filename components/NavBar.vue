@@ -20,7 +20,7 @@
         <div class="nav-item" v-for="(navbar, i) in navbarList" :key="i">
           <router-link
             v-if="navbar.path.indexOf('http') !== 0"
-            :class="{'router-active': id === navbar.id}"
+            :class="{'router-active': navbar.id === navbar.path ? navbar.path === path : id === navbar.id}"
             :to="navbar.path ? navbar.path : `/${navbar.id}/`"
           >{{navbar.title}}</router-link>
           <a v-else :href="navbar.path" target="_blank">
