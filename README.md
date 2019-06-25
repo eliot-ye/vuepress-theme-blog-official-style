@@ -44,7 +44,9 @@ module.exports = {
     navbar: [ // navbar 的设置
       {
         title: "", // 显示的文字
-        id: "", // 设置当前选项是否选中的判断条件: directories[].id
+        // 设置当前选项是否选中的判断条件，必填，判断条件默认: navbar[].id === directories[].id
+        // 如果 navbar[].id === navbar[].path，判断条件为：navbar.path === $route.path
+        id: "",
         path: "" // 路径链接，默认：`/${navbar[].id}/`
       }
     ],
