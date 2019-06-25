@@ -2,6 +2,10 @@
 
 这是一个基于 vuepress 官方文档主题风格的 blog 主题，暂不考虑多语言
 
+## 主题示例
+
+[https://eliot-ye.gitee.io/](https://eliot-ye.gitee.io/)
+
 ## 下载
 
 ```bash
