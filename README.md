@@ -17,9 +17,9 @@ npm i https://github.com/eliot-ye/vuepress-theme-blog-official-style.git -S
 ## 配置
 
 ```js
-{
-  themeConfig:{
-    theme: "blog-official-style",
+module.exports = {
+  theme: "blog-official-style",
+  themeConfig: {
     about: { // 主页侧边关于栏的配置
       portrait: "", // 头像
       msgList: [ // 信息
