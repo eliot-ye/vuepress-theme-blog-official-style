@@ -2,7 +2,8 @@ module.exports = (themeConfig, ctx) => {
   const {
     directories = [],
     container = [],
-    tag = {}
+    tag = {},
+    pwa
   } = themeConfig;
 
   /** 默认的分页配置 */
@@ -37,24 +38,9 @@ module.exports = (themeConfig, ctx) => {
 
   /** 自定义容器 */
   const containerList = [
-    ['container', {
-      type: 'tip',
-      defaultTitle: {
-        '/zh/': '提示'
-      }
-    }],
-    ['container', {
-      type: 'warning',
-      defaultTitle: {
-        '/zh/': '注意'
-      }
-    }],
-    ['container', {
-      type: 'danger',
-      defaultTitle: {
-        '/zh/': '警告'
-      }
-    }],
+    ['container', { type: 'tip', defaultTitle: '提示' }],
+    ['container', { type: 'warning', defaultTitle: '注意' }],
+    ['container', { type: 'danger', defaultTitle: '警告' }],
     ...container
   ];
 
@@ -70,6 +56,17 @@ module.exports = (themeConfig, ctx) => {
     '@vuepress/nprogress',
     ['@vuepress/search', { searchMaxSuggestions: 10 }]
   ];
+
+  if (pwa) {
+    plugins.push(['@vuepress/pwa', {
+      serviceWorker: true,
+      popupComponent: pwa.popupComponent || 'TheSWUpdatePopup',
+      updatePopup: {
+        message: pwa.message || "发现内容有更新",
+        buttonText: pwa.buttonText || "刷新"
+      }
+    }])
+  }
 
   return { plugins };
 }
