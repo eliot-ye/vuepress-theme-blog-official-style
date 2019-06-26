@@ -3,6 +3,7 @@ module.exports = (themeConfig, ctx) => {
     directories = [],
     container = [],
     tag = {},
+    comment
     // pwa
   } = themeConfig;
 
@@ -56,6 +57,19 @@ module.exports = (themeConfig, ctx) => {
     '@vuepress/nprogress',
     ['@vuepress/search', { searchMaxSuggestions: 10 }]
   ];
+
+  if(comment){
+    plugins.push(['@vssue/vuepress-plugin-vssue', {
+      // 设置 `platform` 而不是 `api`
+      platform: comment.platform || 'gitee',
+
+      // 其他的 Vssue 配置
+      owner: comment.owner,
+      repo: comment.repo,
+      clientId: comment.clientId,
+      clientSecret: comment.clientSecret,
+    }])
+  }
 
   // if (pwa) {
   //   plugins.push(['@vuepress/pwa', {

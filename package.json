@@ -4,7 +4,7 @@
   "author": "Eliot Ye",
   "license": "MIT",
   "description": "an official style blog theme for vuepress",
-  "homepage":"https://github.com/eliot-ye/vuepress-theme-blog-official-style",
+  "homepage": "https://github.com/eliot-ye/vuepress-theme-blog-official-style",
   "keywords": [
     "vuepress-theme",
     "blog-official-style",
@@ -20,6 +20,7 @@
     "@vuepress/plugin-blog": "^1.2.4",
     "@vuepress/plugin-nprogress": "^1.0.2",
     "@vuepress/plugin-search": "^1.0.2",
-    "vuepress-plugin-container": "^2.0.1"
+    "vuepress-plugin-container": "^2.0.1",
+    "@vssue/vuepress-plugin-vssue": "^1.0.1"
   }
 }

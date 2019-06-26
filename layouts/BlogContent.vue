@@ -10,6 +10,7 @@
         </div>
         <div style="clear: both"></div>
       </footer>
+      <Vssue :title="$title" />
     </div>
   </div>
 </template>
