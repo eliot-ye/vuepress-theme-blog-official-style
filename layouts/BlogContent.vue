@@ -10,7 +10,7 @@
         </div>
         <div style="clear: both"></div>
       </footer>
-      <Vssue :title="$title"/>
+      <Vssue :title="$frontmatter.issueId || $title"/>
     </div>
   </div>
 </template>
