@@ -10,7 +10,7 @@
         </div>
         <div style="clear: both"></div>
       </footer>
-      <Vssue :title="$frontmatter.issueId || $title"/>
+      <Vssue v-if="$themeConfig.comment" :issueId="$frontmatter.issueId"/>
     </div>
   </div>
 </template>
@@ -31,12 +31,17 @@ export default {
   padding-right $sidebarWidth * 0.8
 #BlogContent-footer
   padding-top 50px
-  padding-bottom 20px
+  padding-bottom 60px
 #last-updated
-  float right
+  // float right
   font-size 0.9em
   .time
     color #aaa
+#BlogContent
+  a.vssue-header-comments-count
+    cursor default
+    text-decoration none
+    font-size 20px
 @media (max-width: $MQNarrow)
   #BlogContent.hasHeaders
     padding-right 0
