@@ -20,6 +20,7 @@
 <script>
 import Outline from "../components/Outline.vue";
 import { VssueComponent } from "vssue";
+import "vssue/dist/vssue.css";
 export default {
   components: {
     Outline,
@@ -38,6 +39,7 @@ export default {
   },
   created() {
     const comment = this.$themeConfig.comment;
+    console.log(comment)
     if (!comment) return;
     if (comment.platform === "gitee") {
       this.VssueOptions.api = require("@vssue/api-gitee-v5");
