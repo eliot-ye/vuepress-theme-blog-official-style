@@ -3,7 +3,7 @@ module.exports = (themeConfig, ctx) => {
     directories = [],
     container = [],
     tag = {},
-    pwa
+    // pwa
   } = themeConfig;
 
   /** 默认的分页配置 */
@@ -57,16 +57,16 @@ module.exports = (themeConfig, ctx) => {
     ['@vuepress/search', { searchMaxSuggestions: 10 }]
   ];
 
-  if (pwa) {
-    plugins.push(['@vuepress/pwa', {
-      serviceWorker: true,
-      popupComponent: pwa.popupComponent || 'TheSWUpdatePopup',
-      updatePopup: {
-        message: pwa.message || "发现内容有更新",
-        buttonText: pwa.buttonText || "刷新"
-      }
-    }])
-  }
+  // if (pwa) {
+  //   plugins.push(['@vuepress/pwa', {
+  //     serviceWorker: true,
+  //     popupComponent: pwa.popupComponent || 'TheSWUpdatePopup',
+  //     updatePopup: {
+  //       message: pwa.message || "发现内容有更新",
+  //       buttonText: pwa.buttonText || "刷新"
+  //     }
+  //   }])
+  // }
 
   return { plugins };
 }
