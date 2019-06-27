@@ -67,4 +67,6 @@ module.exports = {
 
 ## 评论系统
 
-详见 [vssue](https://vssue.js.org/zh/guide/vuepress.html)
+- 文档详见 [vssue](https://vssue.js.org/zh/guide/vuepress.html)
+- 如果需要使用已创建好的 `issue`，可在该文件的 `frontmatter` 里设置 `issueId`
+- 如果页面不需要评论系统，可设置该文件的 `frontmatter` - `comment: false` 以屏蔽评论框

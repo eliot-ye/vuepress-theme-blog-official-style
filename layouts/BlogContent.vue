@@ -10,7 +10,7 @@
         </div>
         <div style="clear: both"></div>
       </footer>
-      <Vssue v-if="$themeConfig.comment && $frontmatter.comment !== false" :issueId="$frontmatter.issueId"/>
+      <Vssue v-if="$themeConfig.comment && $frontmatter.comment !== 'false'" :issueId="$frontmatter.issueId"/>
     </div>
   </div>
 </template>
