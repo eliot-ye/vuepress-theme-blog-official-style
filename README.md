@@ -53,7 +53,18 @@ module.exports = {
     paginationText:{ // 分页按钮
       prevText: "", // 上一页的文字显示
       nextText: "" // 下一页的文字显示
+    },
+    comment:{ // 如果没有此字段，表示不使用评论系统
+      platform: 'github', // 默认 github
+      owner: 'OWNER_OF_REPO',
+      repo: 'NAME_OF_REPO',
+      clientId: 'YOUR_CLIENT_ID',
+      clientSecret: 'YOUR_CLIENT_SECRET'
     }
   }
 }
 ```
+
+## 评论系统
+
+详见 [vssue](https://vssue.js.org/zh/guide/vuepress.html)
