@@ -10,7 +10,7 @@
         </div>
         <div style="clear: both"></div>
       </footer>
-      <!-- <Vssue v-if="$themeConfig.comment" :issueId="$frontmatter.issueId"/> -->
+      <Vssue v-if="$themeConfig.comment && $frontmatter.comment !== false" :issueId="$frontmatter.issueId"/>
     </div>
   </div>
 </template>
@@ -37,11 +37,11 @@ export default {
   font-size 0.9em
   .time
     color #aaa
-// #BlogContent
-//   a.vssue-header-comments-count
-//     cursor default
-//     text-decoration none
-//     font-size 20px
+#BlogContent
+  a.vssue-header-comments-count
+    cursor default
+    text-decoration none
+    font-size 20px
 @media (max-width: $MQNarrow)
   #BlogContent.hasHeaders
     padding-right 0

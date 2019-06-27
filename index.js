@@ -58,18 +58,15 @@ module.exports = (themeConfig, ctx) => {
     ['@vuepress/search', { searchMaxSuggestions: 10 }]
   ];
 
-  // if(comment){
-  //   plugins.push(['@vssue/vuepress-plugin-vssue', {
-  //     // 设置 `platform` 而不是 `api`
-  //     platform: comment.platform || 'gitee',
-
-  //     // 其他的 Vssue 配置
-  //     owner: comment.owner,
-  //     repo: comment.repo,
-  //     clientId: comment.clientId,
-  //     clientSecret: comment.clientSecret,
-  //   }])
-  // }
+  if(comment){
+    plugins.push(['@vssue/vuepress-plugin-vssue', {
+      platform: comment.platform || 'github',
+      owner: comment.owner,
+      repo: comment.repo,
+      clientId: comment.clientId,
+      clientSecret: comment.clientSecret,
+    }])
+  }
 
   // if (pwa) {
   //   plugins.push(['@vuepress/pwa', {
