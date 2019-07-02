@@ -49,7 +49,7 @@ export default {
 
 
 <style lang="stylus">
-@import url("../styles/config");
+@import '../styles/config'
 
 #Statement
   background-color $borderColor
