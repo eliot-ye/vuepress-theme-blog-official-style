@@ -5,7 +5,7 @@
       <Outline/>
       <footer id="BlogContent-footer">
         <div id="last-updated" v-if="$page.lastUpdated">
-          <span class="prefix">{{$themeConfig.lastUpdated || "上次更新："}}</span>
+          <span class="prefix">{{$themeConfig.lastUpdated || "最后更新："}}</span>
           <span class="time">{{$page.lastUpdated}}</span>
         </div>
         <div style="clear: both"></div>
