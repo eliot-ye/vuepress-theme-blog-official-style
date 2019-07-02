@@ -1,8 +1,7 @@
 <template>
   <div id="BlogContent" :class="{'hasHeaders':$page.headers}">
     <div class="theme-blog-content">
-      <Content/>
-      <Outline/>
+      <Content />
       <footer id="BlogContent-footer">
         <div id="last-updated" v-if="$page.lastUpdated">
           <span class="prefix">{{$themeConfig.lastUpdated || "最后更新："}}</span>
@@ -10,8 +9,12 @@
         </div>
         <div style="clear: both"></div>
       </footer>
-      <Vssue v-if="$themeConfig.comment && $frontmatter.comment !== false" :issueId="$frontmatter.issueId"/>
+      <Vssue
+        v-if="$themeConfig.comment && $frontmatter.comment !== false"
+        :issueId="$frontmatter.issueId"
+      />
     </div>
+    <Outline />
   </div>
 </template>
 
