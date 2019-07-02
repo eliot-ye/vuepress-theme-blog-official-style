@@ -20,6 +20,12 @@ npm i https://github.com/eliot-ye/vuepress-theme-blog-official-style.git -S
 module.exports = {
   theme: "blog-official-style",
   themeConfig: {
+    statement:{ // 声明信息框，如果没有，则不显示
+      author: "Eliot Ye", // 作者
+      serveUrl: "https://eliot-ye.gitee.io/", // blog 的服务器地址，用于显示文章地址
+      copyright: "BY-NC-SA", // 版权协议名称
+      copyrightUrl: "https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh" // 版权协议地址
+    },
     about: { // 主页侧边关于栏的配置
       portrait: "", // 头像
       msgList: [ // 信息
