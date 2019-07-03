@@ -7,14 +7,14 @@
     <p class="singleText">
       <span class="Statement-title">文章链接：</span>
       <span class="Statement-content">
-        <a :href="path" target="_blank" >{{path}}</a>
+        <a :href="path" target="_blank">{{path}}</a>
       </span>
     </p>
     <p>
       <span class="Statement-title">版权声明：</span>
       <span class="Statement-content">
         本博客所有文章除特别声明外，均采用《
-        <a :href="statement.copyrightUrl" target="_blank" >{{statement.copyright}}</a>
+        <a :href="statement.copyrightUrl" target="_blank">{{statement.copyright}}</a>
         》许可协议。转载请注明出处！
       </span>
     </p>
@@ -24,25 +24,26 @@
 <script>
 export default {
   computed: {
-    statement(){
-      return this.$themeConfig.statement
+    statement() {
+      return this.$themeConfig.statement;
     },
-    path(){
+    path() {
+      if (!this.statement) return "";
       /** @type {string} */
       const serveUrl = this.statement.serveUrl;
       /** @type {string} */
       const base = this.$site.base;
       let path = serveUrl;
-      if(serveUrl.lastIndexOf("/") === serveUrl.length - 1){
-        path += base.substring(1)
-      }else{
-        path += base
+      if (serveUrl.lastIndexOf("/") === serveUrl.length - 1) {
+        path += base.substring(1);
+      } else {
+        path += base;
       }
-      path += this.$page.path.substring(1)
-      return path
+      path += this.$page.path.substring(1);
+      return path;
     }
   }
-}
+};
 </script>
 
 
