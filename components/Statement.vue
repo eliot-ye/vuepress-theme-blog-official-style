@@ -32,10 +32,8 @@ export default {
       const serveUrl = this.statement.serveUrl;
       /** @type {string} */
       const base = this.$site.base;
-      /** @type {string} */
-      const pagePath = this.$page.path;
       let path = serveUrl;
-      if(serveUrl.lastIndexOf("/") === serveUrl.lengt - 1){
+      if(serveUrl.lastIndexOf("/") === serveUrl.length - 1){
         path += base.substring(1)
       }else{
         path += base
