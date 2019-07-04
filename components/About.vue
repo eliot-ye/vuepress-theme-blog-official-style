@@ -71,4 +71,8 @@ export default {
       cursor pointer
   .about-msg
     margin 0 5px
+@media (max-width: $MQNarrow)
+  #about
+    display none
+  
 </style>

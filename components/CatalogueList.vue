@@ -40,4 +40,7 @@
       color #999
     .tags
       float right
+@media (min-width: $MQNarrow)
+  #catalogue-list
+    margin-top $navbarHeight
 </style>

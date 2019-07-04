@@ -28,4 +28,7 @@ export default {
   max-width $catalogueWidth
   margin 0 auto
   padding-top $navbarHeight
+@media (min-width: $MQNarrow)
+  #Layout
+    padding-left 130px
 </style>

@@ -54,4 +54,7 @@ export default {
     cursor default
     text-decoration none
     font-size 20px
+@media (min-width: $MQNarrow)
+  #BlogContent.hasHeaders
+    padding-right $sidebarWidth * 0.8
 </style>
