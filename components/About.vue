@@ -50,7 +50,7 @@ export default {
   position fixed
   top $navbarHeight * 2
   left 50%
-  transform translateX(-260%)
+  transform translateX(-230%)
   border-radius 5px
   overflow hidden
   border 1px solid $arrowBgColor
@@ -71,7 +71,4 @@ export default {
       cursor pointer
   .about-msg
     margin 0 5px
-@media (max-width: $MQNarrow)
-  #about
-    display none
 </style>

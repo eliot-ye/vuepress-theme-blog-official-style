@@ -38,8 +38,6 @@ export default {
 <style lang="stylus">
 @import '../styles/config'
 
-#BlogContent.hasHeaders
-  padding-right $sidebarWidth * 0.8
 #last-updated
   padding-top 50px
   font-size 0.9em
@@ -56,7 +54,4 @@ export default {
     cursor default
     text-decoration none
     font-size 20px
-@media (max-width: $MQNarrow)
-  #BlogContent.hasHeaders
-    padding-right 0
 </style>

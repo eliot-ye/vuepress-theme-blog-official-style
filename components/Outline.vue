@@ -93,7 +93,4 @@ $OutlineTop = 25vh
       color $accentColor
       background-color $borderColor
       border-left-color $accentColor
-@media (max-width: $MQNarrow)
-  #Outline
-    display none
 </style>

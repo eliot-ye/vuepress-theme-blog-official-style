@@ -23,7 +23,7 @@
 #catalogue-list
   list-style none
   padding 0 10px
-  margin-top $navbarHeight
+  margin-top ($navbarHeight / 2)
   .catalogue-item
     padding 0.8rem 1.5rem
     border-radius 5px
@@ -40,10 +40,4 @@
       color #999
     .tags
       float right
-.tagsPage
-  #catalogue-list
-    margin-top ($navbarHeight / 2)
-@media (max-width: $MQNarrow)
-  #catalogue-list
-    margin-top ($navbarHeight / 2)
 </style>
