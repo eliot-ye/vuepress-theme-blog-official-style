@@ -23,16 +23,14 @@
 </template>
 
 <script>
+const btnShowNum = 7;
 export default {
   computed: {
-    btnShowNum(){
-      return document.documentElement.clientWidth > 419 ? 9 : 5
-    },
     paginationNum() {
       return this.$pagination.paginationIndex + 1;
     },
     twoFlanksNum() {
-      return (this.btnShowNum + 1) / 2;
+      return (btnShowNum + 1) / 2;
     },
     prevMore() {
       return this.paginationNum > this.twoFlanksNum;
@@ -46,7 +44,7 @@ export default {
   methods: {
     paginationBtnShow(i) {
       if (!this.prevMore) {
-        return i <= this.btnShowNum;
+        return i <= btnShowNum;
       } else if (this.prevMore && this.nextMore) {
         return (
           (i > this.paginationNum - this.twoFlanksNum &&
@@ -55,7 +53,7 @@ export default {
             i >= this.paginationNum)
         );
       } else if (!this.nextMore) {
-        return i > this.$pagination.length - this.btnShowNum;
+        return i > this.$pagination.length - btnShowNum;
       }
     }
   }
