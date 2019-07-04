@@ -44,7 +44,14 @@ module.exports = {
         id: "", // 当前目录的id，默认：dirname
         layout: "", // 当前目录文章列表的布局组件，默认："Layout"
         itemLayout: "", // 当前目录文章的布局组件，默认："BlogContent"
-        pagination:{} // 当前目录文章列表的分页设置
+        pagination:{ // 当前目录文章列表的分页设置
+          sorter: (prev,next)=>{ // 目录的排序算法
+            const prevTime = new Date(prev.frontmatter.date).getTime()
+            const nextTime = new Date(next.frontmatter.date).getTime()
+            return prevTime - nextTime > 0 ? -1 : 1
+          },
+          lengthPerPage: 10 // 分页，每页显示条数
+        }
       },
     ],
     navbar: [ // navbar 的设置
