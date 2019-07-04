@@ -2,9 +2,9 @@
   <div id="pagination">
     <button
       class="pagination-btn"
-      :disabled="!$pagination.hasPrev"
-      @click="$router.push($pagination.prevLink)"
-    >{{paginationText.prevText}}</button>
+      v-if="prevMore"
+      @click="$router.push($pagination._paginationPages[0].path)"
+    >1</button>
     <div class="pagination-btn pagination-more" v-if="prevMore">...</div>
     <button
       class="pagination-btn"
@@ -16,28 +16,23 @@
     <div class="pagination-btn pagination-more" v-if="nextMore">...</div>
     <button
       class="pagination-btn"
-      :disabled="!$pagination.hasNext"
-      @click="$router.push($pagination.nextLink)"
-    >{{paginationText.nextText}}</button>
+      v-if="nextMore"
+      @click="$router.push($pagination._paginationPages[$pagination.length - 1].path)"
+    >{{$pagination.length}}</button>
   </div>
 </template>
 
 <script>
-const btnShowNum = 9;
 export default {
   computed: {
-    paginationText(){
-      const paginationText = this.$themeConfig.paginationText || {};
-      return {
-        prevText: paginationText.prevText || "上一页",
-        nextText: paginationText.nextText || "下一页"
-      }
+    btnShowNum(){
+      return document.documentElement.clientWidth > 419 ? 9 : 5
     },
     paginationNum() {
       return this.$pagination.paginationIndex + 1;
     },
     twoFlanksNum() {
-      return (btnShowNum + 1) / 2;
+      return (this.btnShowNum + 1) / 2;
     },
     prevMore() {
       return this.paginationNum > this.twoFlanksNum;
@@ -51,7 +46,7 @@ export default {
   methods: {
     paginationBtnShow(i) {
       if (!this.prevMore) {
-        return i <= btnShowNum;
+        return i <= this.btnShowNum;
       } else if (this.prevMore && this.nextMore) {
         return (
           (i > this.paginationNum - this.twoFlanksNum &&
@@ -60,7 +55,7 @@ export default {
             i >= this.paginationNum)
         );
       } else if (!this.nextMore) {
-        return i > this.$pagination.length - btnShowNum;
+        return i > this.$pagination.length - this.btnShowNum;
       }
     }
   }
