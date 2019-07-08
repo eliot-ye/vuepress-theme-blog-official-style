@@ -23,14 +23,18 @@
 </template>
 
 <script>
-const btnShowNum = 7;
 export default {
+  data() {
+    return {
+      btnShowNum: 9
+    };
+  },
   computed: {
     paginationNum() {
       return this.$pagination.paginationIndex + 1;
     },
     twoFlanksNum() {
-      return (btnShowNum + 1) / 2;
+      return (this.btnShowNum + 1) / 2;
     },
     prevMore() {
       return this.paginationNum > this.twoFlanksNum;
@@ -41,10 +45,13 @@ export default {
       );
     }
   },
+  beforeMount() {
+    if (document.documentElement.clientWidth <= 419) this.btnShowNum = 5;
+  },
   methods: {
     paginationBtnShow(i) {
       if (!this.prevMore) {
-        return i <= btnShowNum;
+        return i <= this.btnShowNum;
       } else if (this.prevMore && this.nextMore) {
         return (
           (i > this.paginationNum - this.twoFlanksNum &&
@@ -53,7 +60,7 @@ export default {
             i >= this.paginationNum)
         );
       } else if (!this.nextMore) {
-        return i > this.$pagination.length - btnShowNum;
+        return i > this.$pagination.length - this.btnShowNum;
       }
     }
   }
