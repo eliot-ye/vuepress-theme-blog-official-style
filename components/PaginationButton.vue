@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import config from "../styles/config.json";
 export default {
   data() {
     return {
@@ -46,7 +47,10 @@ export default {
     }
   },
   beforeMount() {
-    if (document.documentElement.clientWidth <= 419) this.btnShowNum = 5;
+    if (
+      document.documentElement.clientWidth <= parseInt(config.$MQMobileNarrow)
+    )
+      this.btnShowNum = 5;
   },
   methods: {
     paginationBtnShow(i) {

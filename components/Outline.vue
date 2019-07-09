@@ -1,5 +1,5 @@
 <template>
-  <div id="Outline" v-if="headers">
+  <div id="Outline" v-if="OutlineShow">
     <h4 class="Outline-title">目录</h4>
     <ul class="sidebar" ref="sidebar">
       <router-link v-for="(item, i) in headers" :to="`#${item.slug}`" class="sidebar-link">
@@ -12,6 +12,7 @@
 
 <script>
 import { AntiShake } from "../tools/utils.js";
+import config from "../styles/config.json";
 let AntiShakeObj = new AntiShake(300);
 let sidebarEl = null;
 let sidebarObj = {
@@ -20,6 +21,11 @@ let sidebarObj = {
 };
 export default {
   name: "Outline",
+  data() {
+    return {
+      OutlineShow: true
+    };
+  },
   computed: {
     headers() {
       return (
@@ -29,7 +35,12 @@ export default {
     }
   },
   mounted() {
-    if(!this.headers)return;
+    if (
+      document.documentElement.clientWidth <= parseInt(config.$MQMobileNarrow) || !this.headers
+    ) {
+      this.OutlineShow = false;
+      return;
+    }
     sidebarEl = this.$refs.sidebar;
     sidebarObj.clientHeight = sidebarEl.clientHeight;
     sidebarObj.scrollHeight = sidebarEl.scrollHeight;
@@ -93,7 +104,4 @@ $OutlineTop = 25vh
       color $accentColor
       background-color $borderColor
       border-left-color $accentColor
-@media (max-width: $MQNarrow)
-  #Outline
-    display none
 </style>
