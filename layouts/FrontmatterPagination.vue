@@ -28,7 +28,7 @@ export default {
   },
   beforeMount() {
     if (
-      document.documentElement.clientWidth <= parseInt(config.$MQMobileNarrow)
+      document.documentElement.clientWidth <= parseInt(config.$MQNarrow)
     )
       this.AboutShow = false;
   }

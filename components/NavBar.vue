@@ -1,6 +1,6 @@
 <template>
   <header id="navbar">
-    <div class="sidebar-button" v-if="isMQMobile" @click="slideBarShow = !slideBarShow">
+    <div class="sidebar-button" v-if="isMQNarrow" @click="slideBarShow = !slideBarShow">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -16,7 +16,7 @@
     </div>
     <router-link class="site-title" to="/">{{$siteTitle}}</router-link>
     <div class="links">
-      <nav class="nav" v-if="!isMQMobile">
+      <nav class="nav" v-if="!isMQNarrow">
         <div class="nav-item" v-for="(navbar, i) in navbarList" :key="i">
           <router-link
             v-if="navbar.path.indexOf('http') !== 0"
@@ -35,7 +35,7 @@
       <SearchBox />
     </div>
     <div id="slideBar-semitransparent" v-show="slideBarShow" @click="slideBarShow = false"></div>
-    <div id="slideBar" :class="{'slideBarShow':slideBarShow}" v-if="isMQMobile">
+    <div id="slideBar" :class="{'slideBarShow':slideBarShow}" v-if="isMQNarrow">
       <About />
       <div class="nav-item" @click="slideBarShow = false">
         <router-link :class="{'router-active': path.indexOf('/tag/') > -1 }" to="/tag/">Tags</router-link>
@@ -71,7 +71,7 @@ export default {
   data() {
     return {
       slideBarShow: false,
-      isMQMobile: false
+      isMQNarrow: false
     };
   },
   computed: {
@@ -87,9 +87,9 @@ export default {
   },
   beforeMount() {
     if (
-      document.documentElement.clientWidth <= parseInt(config.$MQMobileNarrow)
+      document.documentElement.clientWidth <= parseInt(config.$MQNarrow)
     )
-      this.isMQMobile = true;
+      this.isMQNarrow = true;
   },
   methods: {
     getNavItemActive(navbar) {

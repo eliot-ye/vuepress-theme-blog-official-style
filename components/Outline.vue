@@ -36,7 +36,7 @@ export default {
   },
   mounted() {
     if (
-      document.documentElement.clientWidth <= parseInt(config.$MQMobileNarrow) || !this.headers
+      document.documentElement.clientWidth <= parseInt(config.$MQNarrow) || !this.headers
     ) {
       this.OutlineShow = false;
       return;
