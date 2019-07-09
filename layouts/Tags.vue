@@ -16,3 +16,10 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+@import "../styles/config"
+@media (min-width: $MQNarrow)
+  .tagsPage
+    padding-left 130px
+</style>
