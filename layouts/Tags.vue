@@ -9,7 +9,7 @@
 import About from "../components/About.vue";
 import TagList from "../components/TagList.vue"
 export default {
-  name:"Tag",
+  name: "Tag",
   components: {
     About,
     TagList
