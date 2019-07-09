@@ -1,18 +1,39 @@
 <template>
   <div class="tagsPage">
-    <About/>
+    <About v-if="AboutShow" />
     <TagList />
   </div>
 </template>
 
 <script>
 import About from "../components/About.vue";
-import TagList from "../components/TagList.vue"
+import TagList from "../components/TagList.vue";
+import config from "../styles/config.json";
 export default {
-  name:"Tag",
+  name: "Tag",
   components: {
     About,
     TagList
+  },
+  data() {
+    return {
+      AboutShow: true
+    };
+  },
+  beforeMount() {
+    if (
+      document.documentElement.clientWidth <= parseInt(config.$MQNarrow)
+    )
+      this.AboutShow = false;
   }
-}
+};
 </script>
+
+<style lang="stylus">
+@import '../styles/config'
+
+@media (min-width: $MQNarrow)
+  .tagsPage
+    padding-left 130px
+</style>
+

@@ -1,7 +1,7 @@
 <template>
   <div id="about" v-if="$themeConfig.about">
     <div class="portrait" v-if="about.portrait">
-      <img :src="about.portrait" alt="portrait" class="portrait-img">
+      <img :src="about.portrait" alt="portrait" class="portrait-img" />
     </div>
     <div
       v-for="(msg,i) in msgList"
@@ -10,10 +10,10 @@
       :class="{'is-link':msg.path, 'no-portrait':!about.portrait}"
       @click="go(msg.path)"
     >
-      <img v-if="msg.img" :src="msg.img" class="about-msg about-img">
+      <img v-if="msg.img" :src="msg.img" class="about-msg about-img" />
       <span v-if="msg.icon" :class="msg.icon" class="about-msg"></span>
       <span v-if="msg.text" class="about-msg">{{msg.text}}</span>
-      <OutLinkIcon :path="msg.path"/>
+      <OutLinkIcon :path="msg.path" />
     </div>
   </div>
 </template>
@@ -71,8 +71,4 @@ export default {
       cursor pointer
   .about-msg
     margin 0 5px
-@media (max-width: $MQNarrow)
-  #about
-    display none
-  
 </style>

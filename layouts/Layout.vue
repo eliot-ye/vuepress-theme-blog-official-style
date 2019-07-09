@@ -1,8 +1,8 @@
 <template>
   <div id="Layout">
-    <About/>
-    <CatalogueList/>
-    <PaginationButton/>
+    <About v-if="AboutShow" />
+    <CatalogueList />
+    <PaginationButton />
   </div>
 </template>
 
@@ -10,12 +10,24 @@
 import About from "../components/About.vue";
 import CatalogueList from "../components/CatalogueList";
 import PaginationButton from "../components/PaginationButton";
+import config from "../styles/config.json";
 export default {
   name: "Layout",
   components: {
     About,
     CatalogueList,
     PaginationButton
+  },
+  data() {
+    return {
+      AboutShow: true
+    };
+  },
+  beforeMount() {
+    if (
+      document.documentElement.clientWidth <= parseInt(config.$MQNarrow)
+    )
+      this.AboutShow = false;
   }
 };
 </script>

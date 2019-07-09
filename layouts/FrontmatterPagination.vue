@@ -1,17 +1,18 @@
 <template>
   <div class="tagsPage">
-    <About/>
+    <About v-if="AboutShow" />
     <TagList />
-    <CatalogueList/>
-    <PaginationButton/>
+    <CatalogueList />
+    <PaginationButton />
   </div>
 </template>
 
 <script>
 import About from "../components/About.vue";
-import TagList from "../components/TagList.vue"
+import TagList from "../components/TagList.vue";
 import CatalogueList from "../components/CatalogueList";
 import PaginationButton from "../components/PaginationButton";
+import config from "../styles/config.json";
 export default {
   name: "FrontmatterPagination",
   components: {
@@ -19,6 +20,17 @@ export default {
     TagList,
     CatalogueList,
     PaginationButton
+  },
+  data() {
+    return {
+      AboutShow: true
+    };
+  },
+  beforeMount() {
+    if (
+      document.documentElement.clientWidth <= parseInt(config.$MQNarrow)
+    )
+      this.AboutShow = false;
   }
 };
 </script>
