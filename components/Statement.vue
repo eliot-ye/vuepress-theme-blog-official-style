@@ -52,7 +52,7 @@ export default {
 
 #Statement
   background-color $borderColor
-  border-left 5px solid $accentColor
+  border-left .5rem solid $accentColor
   padding 20px 10px
   margin 30px 0
   .Statement-title
