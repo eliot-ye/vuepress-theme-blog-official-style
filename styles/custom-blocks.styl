@@ -14,8 +14,11 @@ $dangerBorderColor = #ff0000
     border-left-style solid
     margin 1rem 0
   &.tip
-    background-color #f3f5f7
-    border-color $tipBorderColor
+    background-color #CBF0E0
+    border-color darken($tipBorderColor, 20%)
+    color darken($tipBorderColor, 70%)
+    .custom-block-title
+      color darken($tipBorderColor, 50%)
   &.warning
     background-color #FFF7D0
     border-color darken($warningBorderColor, 35%)
