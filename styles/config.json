@@ -35,6 +35,5 @@
     "dockerfile",
     "makefile",
     "php"
-  ],
-  "$contentClass": ".theme-blog-content"
+  ]
 }

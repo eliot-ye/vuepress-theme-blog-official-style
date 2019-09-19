@@ -21,8 +21,8 @@ body
 .page
   padding-left $sidebarWidth
 
-{$contentClass}:not(.custom)
-  @extend $wrapper
+.theme-blog-content:not(.custom)
+  @extend .wrapper
   > .content__default
     margin-top $navbarHeight
   a:hover
@@ -33,7 +33,7 @@ body
     border-radius 4px
   img
     max-width 100%
-{$contentClass}.custom
+.theme-blog-content.custom
   padding 0
   margin 0
   img
@@ -66,7 +66,7 @@ strong
 h1, h2, h3, h4, h5, h6
   font-weight 600
   line-height 1.25
-  {$contentClass}:not(.custom)  &
+  .theme-blog-content:not(.custom)  &
     margin-top -($navbarHeight - 1)
     padding-top $navbarHeight
     margin-bottom 0
@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6
     opacity 1
 h1
   font-size 2.2rem
-  {$contentClass} .content__default &
+  .theme-blog-content .content__default &
     text-align center
     a.header-anchor
       display none
