@@ -17,7 +17,7 @@
   "dependencies": {
     "@vuepress/plugin-active-header-links": "^1.1.0",
     "@vuepress/plugin-back-to-top": "^1.1.0",
-    "@vuepress/plugin-blog": "^1.5.2",
+    "@vuepress/plugin-blog": "^1.2.5",
     "@vuepress/plugin-nprogress": "^1.1.0",
     "@vuepress/plugin-search": "^1.1.0",
     "vuepress-plugin-container": "^2.1.2",
