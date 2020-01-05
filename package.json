@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-blog-official-style",
-  "version": "1.1.22",
+  "version": "1.1.23",
   "author": "Eliot Ye",
   "license": "MIT",
   "description": "an official style blog theme for vuepress",
@@ -17,11 +17,11 @@
   "dependencies": {
     "@vuepress/plugin-active-header-links": "^1.2.0",
     "@vuepress/plugin-back-to-top": "^1.2.0",
-    "@vuepress/plugin-blog": "^1.5.2",
+    "@vuepress/plugin-blog": "^1.7.0",
     "@vuepress/plugin-nprogress": "^1.2.0",
     "@vuepress/plugin-search": "^1.2.0",
     "vuepress-plugin-container": "^2.1.2",
-    "@vssue/vuepress-plugin-vssue": "^1.2.2",
-    "@vssue/api-github-v3": "^1.2.2"
+    "@vssue/vuepress-plugin-vssue": "^1.4.2",
+    "@vssue/api-github-v3": "^1.4.0"
   }
 }
