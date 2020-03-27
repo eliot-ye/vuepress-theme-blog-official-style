@@ -2,8 +2,12 @@
   <div id="Outline" v-if="headers">
     <h4 class="Outline-title">目录</h4>
     <ul class="sidebar" ref="sidebar">
-      <router-link v-for="(item, i) in headers" :to="`#${item.slug}`" class="sidebar-link">
-        <li class="Outline-item">{{item.title}}</li>
+      <router-link
+        v-for="(item, i) in headers"
+        :to="`#${item.slug}`"
+        class="sidebar-link"
+      >
+        <li class="Outline-item">{{ item.title }}</li>
       </router-link>
       <li style="height: 30px;"></li>
     </ul>
@@ -11,8 +15,7 @@
 </template>
 
 <script>
-import { AntiShake } from "../tools/utils.js";
-let AntiShakeObj = new AntiShake(300);
+import { debounce } from "../tools/utils.js";
 let sidebarEl = null;
 let sidebarObj = {
   clientHeight: 0,
@@ -29,7 +32,7 @@ export default {
     }
   },
   mounted() {
-    if(!this.headers)return;
+    if (!this.headers) return;
     sidebarEl = this.$refs.sidebar;
     sidebarObj.clientHeight = sidebarEl.clientHeight;
     sidebarObj.scrollHeight = sidebarEl.scrollHeight;
@@ -37,24 +40,20 @@ export default {
       window.addEventListener("scroll", this.onScroll);
       this.$once("hook:beforeDestroy", function() {
         window.removeEventListener("scroll", this.onScroll);
-        AntiShakeObj = null;
         sidebarEl = null;
         sidebarObj = null;
       });
     }
   },
   methods: {
-    onScroll() {
-      AntiShakeObj.handle(() => {
-        const activeLink =
-          document.querySelector(
-            "#Outline .sidebar .router-link-exact-active .Outline-item"
-          ) || {};
-        const scrollTop =
-          activeLink.offsetTop - 60 - sidebarObj.clientHeight / 2;
-        sidebarEl.scrollTop = scrollTop;
-      });
-    }
+    onScroll: debounce(function() {
+      const activeLink =
+        document.querySelector(
+          "#Outline .sidebar .router-link-exact-active .Outline-item"
+        ) || {};
+      const scrollTop = activeLink.offsetTop - 60 - sidebarObj.clientHeight / 2;
+      sidebarEl.scrollTop = scrollTop;
+    })
   }
 };
 </script>
