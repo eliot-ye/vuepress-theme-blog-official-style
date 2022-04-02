@@ -3,7 +3,7 @@
   "version": "1.1.25",
   "author": "Eliot Ye",
   "license": "MIT",
-  "description": "an official style blog theme for vuepress",
+  "description": "an official style blog theme for vuepress v1.4.0",
   "homepage": "https://github.com/eliot-ye/vuepress-theme-blog-official-style",
   "keywords": [
     "vuepress-theme",
