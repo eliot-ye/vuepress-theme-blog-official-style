@@ -1,7 +1,9 @@
 <template>
   <div id="global-layout">
-    <NavBar />
-    <DefaultGlobalLayout />
+    <ClientOnly>
+      <NavBar />
+      <DefaultGlobalLayout />
+    </ClientOnly>
   </div>
 </template>
 
